@@ -23,16 +23,20 @@ const router = require("./routes/router");
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser(""));
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(cors({
+  credentials: true,
+  origin: "https://your-frontend-url.com" // Replace with your actual frontend URL
+}));
+
 app.use("/api", router);
 
-// For deployment
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client/build", "index.html"));
-  });
-}
+// // For deployment
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static("client/build"));
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "client/build", "index.html"));
+//   });
+// }
 app.get("/", (req, res) => {
   res.send("Hello, World!");
 });
