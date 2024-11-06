@@ -3,14 +3,13 @@
   "version": "1.0.0",
   "description": "Amazon clone Rest API using MongoDB and Express",
   "main": "index.js",
-
   "keywords": [
     "mongo",
     "express",
     "rest",
     "api"
   ],
-  "author": "Sushant Patial",
+  "author": "Swanith Pidugu",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -27,9 +26,7 @@
     "multer": "^1.4.4",
     "razorpay": "^2.8.1",
     "validator": "^13.7.0"
-  }
-}
-{
+  },
   "scripts": {
     "start": "node index.js",
     "build": "cd client && npm install && npm run build",
