@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(cookieParser(""));
 app.use(cors({
   credentials: true,
-  origin: "https://your-frontend-url.com" // Replace with your actual frontend URL
+  origin: "https://neon-griffin-37916c.netlify.app" // Replace with your actual frontend URL
 }));
 
 app.use("/api", router);
