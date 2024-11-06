@@ -21,7 +21,9 @@ const Slider = (props) => {
   useEffect(function () {
     async function fetchProducts() {
       try {
-        const res = await axios.get("http://localhost:8000/api/products");
+        const res = await axios.get(
+          "https://ecommerceclone-jzn3.onrender.com/api/products"
+        );
         setProducts(res.data);
         setIsLoading(false);
       } catch (error) {

@@ -15,9 +15,12 @@ const Profile = () => {
   useEffect(function () {
     async function fetchUser() {
       try {
-        const res = await axios.get("http://localhost:8000/api/getAuthUser", {
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          "https://ecommerceclone-jzn3.onrender.com/api/getAuthUser",
+          {
+            withCredentials: true,
+          }
+        );
 
         if (res) {
           setUserData(res.data);

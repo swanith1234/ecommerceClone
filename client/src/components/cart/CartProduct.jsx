@@ -15,7 +15,7 @@ const CartProduct = (props) => {
   async function deleteFromCart() {
     try {
       const res = await axios.delete(
-        "http://localhost:8000/api/delete/" + product.id,
+        "https://ecommerceclone-jzn3.onrender.com/api/delete/" + product.id,
         {
           withCredentials: true,
         }

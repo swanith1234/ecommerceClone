@@ -18,7 +18,7 @@ const Cart = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/getAuthUser", {
+      .get("https://ecommerceclone-jzn3.onrender.com/api/getAuthUser", {
         withCredentials: true,
       })
       .then(function (res) {
@@ -63,7 +63,7 @@ const Cart = () => {
     script.onload = async () => {
       try {
         const res = await axios.post(
-          "http://localhost:8000/api/create-order",
+          "https://ecommerceclone-jzn3.onrender.com/api/create-order",
           {
             amount: orderAmount + "00",
           },
@@ -75,7 +75,7 @@ const Cart = () => {
         const { id, amount, currency } = res.data.order;
         console.log("order", res.data.order);
         const { key } = await axios.get(
-          "http://localhost:8000/api/get-razorpay-key"
+          "https://ecommerceclone-jzn3.onrender.com/api/get-razorpay-key"
         );
 
         var today = new Date();
@@ -94,7 +94,7 @@ const Cart = () => {
           name: "Payment",
           handler: async function (response) {
             const result = await axios.post(
-              "http://localhost:8000/api/pay-order",
+              "https://ecommerceclone-jzn3.onrender.com/api/pay-order",
               {
                 orderedProducts: orderedProducts,
                 dateOrdered: date,

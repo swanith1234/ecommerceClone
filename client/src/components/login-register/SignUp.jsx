@@ -36,7 +36,7 @@ const SignUp = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/register",
+        "https://ecommerceclone-jzn3.onrender.com/api/register",
         {
           name,
           number,

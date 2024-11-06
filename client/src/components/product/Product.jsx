@@ -16,7 +16,9 @@ const Product = () => {
   useEffect(function () {
     async function fetchSingleProduct() {
       try {
-        const res = await axios.get("http://localhost:8000/api/product/" + id);
+        const res = await axios.get(
+          "https://ecommerceclone-jzn3.onrender.com/api/product/" + id
+        );
         setProduct(res.data);
         console.log("res", res.data);
         setIsLoading(false);
@@ -34,7 +36,7 @@ const Product = () => {
   async function addToCart(id) {
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/addtocart/" + id,
+        "https://ecommerceclone-jzn3.onrender.com/api/addtocart/" + id,
         {
           product,
         },
@@ -56,9 +58,12 @@ const Product = () => {
   const [userData, setUserData] = useState();
   async function fetchUser() {
     try {
-      const res = await axios.get("http://localhost:8000/api/getAuthUser", {
-        withCredentials: true,
-      });
+      const res = await axios.get(
+        "https://ecommerceclone-jzn3.onrender.com/api/getAuthUser",
+        {
+          withCredentials: true,
+        }
+      );
       if (res) {
         setUserData(res.data);
       }
@@ -93,7 +98,7 @@ const Product = () => {
           };
 
           const res = await axios.post(
-            "http://localhost:8000/api/create-order",
+            "https://ecommerceclone-jzn3.onrender.com/api/create-order",
             {
               amount: orderAmount + "00",
             },
@@ -104,7 +109,7 @@ const Product = () => {
           console.log("res", res);
           const { id, amount, currency } = res.data.order;
           const { key } = await axios.get(
-            "http://localhost:8000/api/get-razorpay-key"
+            "https://ecommerceclone-jzn3.onrender.com/api/get-razorpay-key"
           );
 
           var today = new Date();
@@ -123,7 +128,7 @@ const Product = () => {
             name: product.name,
             handler: async function (response) {
               const result = await axios.post(
-                "http://localhost:8000/api/pay-order",
+                "https://ecommerceclone-jzn3.onrender.com/api/pay-order",
                 {
                   orderedProducts: orderedProducts,
                   dateOrdered: date,

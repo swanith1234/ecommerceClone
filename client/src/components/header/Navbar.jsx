@@ -43,9 +43,12 @@ const Navbar = () => {
     // Fetching user data
     async function fetchUser() {
       try {
-        const res = await axios.get("http://localhost:8000/api/getAuthUser", {
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          "https://ecommerceclone-jzn3.onrender.com/api/getAuthUser",
+          {
+            withCredentials: true,
+          }
+        );
         if (res) {
           const name = res.data.name;
           const fname = name.substring(0, name.indexOf(" "));
@@ -82,9 +85,12 @@ const Navbar = () => {
   // Logout
   function logout() {
     try {
-      const res = axios.get("http://localhost:8000/api/logout", {
-        withCredentials: true,
-      });
+      const res = axios.get(
+        "https://ecommerceclone-jzn3.onrender.com/api/logout",
+        {
+          withCredentials: true,
+        }
+      );
 
       if (res) {
         navigate("/");

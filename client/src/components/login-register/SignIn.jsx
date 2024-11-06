@@ -31,7 +31,7 @@ const SignIn = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:8000/api/login",
+        "https://ecommerceclone-jzn3.onrender.com/api/login",
         {
           email,
           password,
