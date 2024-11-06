@@ -14,7 +14,7 @@
     "rest",
     "api"
   ],
-  "author": "Sushant Patial",
+  "author": "Swanith Pidugu",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
