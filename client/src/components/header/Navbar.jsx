@@ -42,6 +42,8 @@ const Navbar = () => {
   useEffect(() => {
     // Fetching user data
     async function fetchUser() {
+      const token=localStorage.getItem('token');
+      console.log(token);
       try {
         const res = await axios.get(
           "https://ecommerceclone-jzn3.onrender.com/api/getAuthUser",
