@@ -214,7 +214,7 @@ router.post(
                     expires: new Date(Date.now() + 3600000), // 60 Mins
                     httpOnly: true,
                   });
-
+localStorage.setItem("token", token);
                   return res.status(201).json({
                     status: true,
                     message: "Logged in successfully!",
